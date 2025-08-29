@@ -4,6 +4,7 @@ from app.config import Config
 from app.extensions import api, jwt, db, migrate
 
 from app.resources.test import blp as TestBlueprint
+from app.resources.user import blp as UserBlueprint
 
 def create_app():
     app = Flask(__name__)
@@ -17,5 +18,6 @@ def create_app():
     jwt.init_app(app)
 
     api.register_blueprint(TestBlueprint)
+    api.register_blueprint(UserBlueprint)
 
     return app
