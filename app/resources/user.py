@@ -1,6 +1,7 @@
 from flask.views import MethodView
 from flask_smorest import abort, Blueprint
 from passlib.hash import pbkdf2_sha256 as sha256
+from flask_jwt_extended import create_access_token
 from sqlalchemy.exc import SQLAlchemyError
 
 from app.extensions import db
@@ -46,3 +47,15 @@ class User(MethodView):
             abort(500, message="An error occurred while deleting the user.")
 
         return {"message": "User deleted."}, 200
+    
+@blp.route("/login")
+class UserLogin(MethodView):
+    @blp.arguments(UserSchema)
+    def post(self, user_data):
+        user = UserModel.query.filter(UserModel.email == user_data['email']).first()
+
+        if user and sha256.verify(user_data['password'], user.password):
+            access_token = create_access_token(identity=str(user.id), fresh=True)
+            return {"access_token": access_token}, 200
+
+        abort(401, message="Invalid credentials.")
