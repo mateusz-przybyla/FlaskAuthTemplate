@@ -14,3 +14,9 @@ class TestAuthEndpoint(MethodView):
     @jwt_required()
     def get(self):
         return {"msg": "This is a protected endpoint."}
+    
+@blp.route("/fresh-protected")
+class TestFreshAuthEndpoint(MethodView):
+    @jwt_required(fresh=True)
+    def get(self):
+        return {"msg": "This is a protected endpoint. You used a fresh token to access it."}

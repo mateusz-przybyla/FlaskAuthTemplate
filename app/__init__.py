@@ -38,6 +38,10 @@ def create_app():
     @jwt.unauthorized_loader
     def missing_token_callback(error):
         return (jsonify({"message": "Request does not contain an access token.", "error": "authorization_required"}), 401)
+    
+    @jwt.needs_fresh_token_loader
+    def token_not_fresh_callback(jwt_header, jwt_payload):
+        return (jsonify({"message": "The token is not fresh.", "error": "fresh_token_required"}), 401)
 
     api.register_blueprint(TestBlueprint)
     api.register_blueprint(UserBlueprint)
