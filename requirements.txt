@@ -6,3 +6,6 @@ flask-sqlalchemy
 flask-migrate
 flask-jwt-extended
 passlib
+pytest
+pytest-flask
+pytest-cov
