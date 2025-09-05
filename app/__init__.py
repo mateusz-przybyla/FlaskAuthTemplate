@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from dotenv import load_dotenv
 
 from app.config import DevConfig, ProdConfig
 from app.extensions import api, jwt, db, migrate
@@ -9,6 +10,7 @@ from app import jwt_callbacks
 
 def create_app(config_class=None):
     app = Flask(__name__)
+    load_dotenv()
 
     if config_class is None:
         config_name = os.getenv("FLASK_CONFIG", "development")
