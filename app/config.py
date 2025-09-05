@@ -9,12 +9,12 @@ class BaseConfig:
     OPENAPI_SWAGGER_UI_PATH = "/swagger-ui"
     OPENAPI_SWAGGER_UI_URL = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "test-123")
+    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY")
     TESTING = False
     DEBUG = False
 
 class DevConfig(BaseConfig):
-    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL") or "sqlite:///data.db"
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL") or "sqlite:///data-dev.db"
     DEBUG = True
 
 class TestConfig(BaseConfig):
