@@ -81,6 +81,7 @@ pip install -r requirements-dev.txt
 ```bash
 copy .env.example .env (Windows Powershell)
 # then edit .env and set your values, e.g.:
+# FLASK_CONFIG=development
 # JWT_SECRET_KEY=super-secret-key
 # DATABASE_URL=sqlite:///data-dev.db
 ```
@@ -104,6 +105,7 @@ flask run
 ```bash
 copy .env.example .env (Windows Powershell)
 # then edit .env and set your values, e.g.:
+# FLASK_CONFIG=development
 # JWT_SECRET_KEY=super-secret-key
 # DATABASE_URL=sqlite:///data-dev.db
 ```
