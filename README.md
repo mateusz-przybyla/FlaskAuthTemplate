@@ -297,6 +297,12 @@ Run all tests with coverage:
 pytest -v --cov=app tests/
 ```
 
+Run all tests with coverage via Docker:
+
+```bash
+docker-compose exec web pytest -v --cov=app tests/
+```
+
 Test structure:
-- `test/unit/` → models, schemas
-- `test/integration/` → auth flow, protected endpoints
+- `tests/unit/` → models, schemas
+- `tests/integration/` → auth flow, protected endpoints
