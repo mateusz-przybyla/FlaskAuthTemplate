@@ -8,7 +8,7 @@ def test_protected_with_access_token(client):
     # call protected endpoint
     response = client.get("/protected", headers={"Authorization": f"Bearer {access_token}"})
     assert response.status_code == 200
-    assert response.get_json()['msg'] == "This is a protected endpoint."
+    assert response.get_json()['message'] == "This is a protected endpoint."
 
 def test_protected_without_token(client):
     response = client.get("/protected")
