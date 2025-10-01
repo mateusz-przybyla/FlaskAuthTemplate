@@ -1,4 +1,4 @@
-# FlaskAuthTemplate
+# FlaskAPI-Core
 
 Flask authentication boilerplate with JWT, SQLAlchemy and Flask-Smorest.
 
