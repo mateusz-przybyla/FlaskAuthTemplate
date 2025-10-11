@@ -37,7 +37,7 @@ Flask authentication boilerplate with JWT, SQLAlchemy and Flask-Smorest.
 
 ## Requirements
 
-- Python 3.13+
+- Python 3.13
 - Flask
 - Flask-Smorest
 - SQLAlchemy
