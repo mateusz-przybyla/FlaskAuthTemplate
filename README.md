@@ -59,8 +59,8 @@ See [requirements.txt](requirements.txt) and [requirements-dev.txt](requirements
 - Clone repository
 
 ```bash
-git clone https://github.com/mateusz-przybyla/FlaskAuthTemplate.git
-cd FlaskAuthTemplate
+git clone https://github.com/mateusz-przybyla/FlaskAPI-Core.git
+cd FlaskAPI-Core
 ```
 
 - Create virtual environment (Windows Powershell)
